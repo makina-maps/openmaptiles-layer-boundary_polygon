@@ -1,0 +1,101 @@
+generalized_tables:
+
+  # etldoc: osm_border_polygon_linestring_gen_z2 -> osm_border_polygon_linestring_gen_z1
+  border_polygon_linestring_gen_z1:
+    source: border_polygon_linestring_gen_z2
+    tolerance: ZRES2
+
+  # etldoc: osm_border_polygon_linestring_gen_z3 -> osm_border_polygon_linestring_gen_z2
+  border_polygon_linestring_gen_z2:
+    source: border_polygon_linestring_gen_z3
+    tolerance: ZRES3
+
+  # etldoc: osm_border_polygon_linestring_gen_z4 -> osm_border_polygon_linestring_gen_z3
+  border_polygon_linestring_gen_z3:
+    source: border_polygon_linestring_gen_z4
+    tolerance: ZRES4
+
+  # etldoc: osm_border_polygon_linestring_gen_z5 -> osm_border_polygon_linestring_gen_z4
+  border_polygon_linestring_gen_z4:
+    source: border_polygon_linestring_gen_z5
+    tolerance: ZRES5
+
+  # etldoc: osm_border_polygon_linestring_gen_z6 -> osm_border_polygon_linestring_gen_z5
+  border_polygon_linestring_gen_z5:
+    source: border_polygon_linestring_gen_z6
+    tolerance: ZRES6
+
+  # etldoc: osm_border_polygon_linestring_gen_z7 -> osm_border_polygon_linestring_gen_z6
+  border_polygon_linestring_gen_z6:
+    source: border_polygon_linestring_gen_z7
+    tolerance: ZRES7
+
+  # etldoc: osm_border_polygon_linestring_gen_z8 -> osm_border_polygon_linestring_gen_z7
+  border_polygon_linestring_gen_z7:
+    source: border_polygon_linestring_gen_z8
+    sql_filter: admin_level <= 6
+    tolerance: ZRES8
+
+  # etldoc: osm_border_polygon_linestring_gen_z9 -> osm_border_polygon_linestring_gen_z8
+  border_polygon_linestring_gen_z8:
+    source: border_polygon_linestring_gen_z9
+    tolerance: ZRES9
+
+  # etldoc: osm_border_polygon_linestring_gen_z10 -> osm_border_polygon_linestring_gen_z9
+  border_polygon_linestring_gen_z9:
+    source: border_polygon_linestring_gen_z10
+    tolerance: ZRES10
+
+  # etldoc: osm_border_polygon_linestring_gen_z11 -> osm_border_polygon_linestring_gen_z10
+  border_polygon_linestring_gen_z10:
+    source: border_polygon_linestring_gen_z11
+    tolerance: ZRES11
+
+  # etldoc: osm_border_polygon_linestring_gen_z12 -> osm_border_polygon_linestring_gen_z11
+  border_polygon_linestring_gen_z11:
+    source: border_polygon_linestring_gen_z12
+    sql_filter: admin_level <= 8
+    tolerance: ZRES12
+
+  # etldoc: osm_border_polygon_linestring_gen_z13 -> osm_border_polygon_linestring_gen_z12
+  border_polygon_linestring_gen_z12:
+    source: border_polygon_linestring_gen_z13
+    tolerance: ZRES13
+
+  # etldoc: osm_border_polygon_linestring -> osm_border_polygon_linestring_gen_z13
+  border_polygon_linestring_gen_z13:
+    source: border_polygon_linestring
+    tolerance: ZRES14
+
+  # etldoc: osm_border_polygon_relation -> osm_border_polygon_linestring
+  border_polygon_linestring:
+    source: border_polygon_relation
+    sql_filter: ST_GeometryType(geometry) = 'ST_LineString' AND role IN ('', 'outer')
+
+
+tables:
+  # etldoc: imposm3 -> osm_border_polygon_relation
+  border_polygon_relation:
+    type: relation_member
+    columns:
+    - name: relation_id
+      type: id
+    - name: role
+      type: member_role
+    - name: geometry
+      type: geometry
+    - key: name
+      name: name
+      type: string
+    - key: boundary
+      name: boundary
+      type: string
+    - key: admin_level
+      name: admin_level
+      type: integer
+    mapping:
+      type: [boundary]
+    filters:
+      require:
+        boundary: [administrative]
+        admin_level: ['1', '2', '3', '4', '5', '6', '7', '8', '9']

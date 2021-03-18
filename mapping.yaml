@@ -1,3 +1,12 @@
+tags:
+  include:
+    - ISO3166-1
+    - ISO3166-2
+    - ref:*
+    - nat_ref
+    - ref
+
+
 generalized_tables:
 
   # etldoc: osm_border_polygon_linestring_gen_z2 -> osm_border_polygon_linestring_gen_z1
@@ -87,15 +96,14 @@ tables:
     - key: name
       name: name
       type: string
-    - key: boundary
-      name: boundary
-      type: string
     - key: admin_level
       name: admin_level
       type: integer
+    - name: tags
+      type: hstore_tags
     mapping:
       type: [boundary]
+      boundary: [administrative]
     filters:
       require:
-        boundary: [administrative]
         admin_level: ['1', '2', '3', '4', '5', '6', '7', '8', '9']

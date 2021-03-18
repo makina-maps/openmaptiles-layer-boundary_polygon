@@ -12,19 +12,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z2
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -46,19 +50,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z2
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -80,19 +88,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z2
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -114,19 +126,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z3
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -148,19 +164,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z4
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -182,19 +202,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z5
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -216,19 +240,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z6
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -250,19 +278,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z7
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -284,19 +316,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z8
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -318,19 +354,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z9
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -352,19 +392,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z10
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -386,19 +430,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z11
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -420,19 +468,23 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z12
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -454,13 +506,16 @@ SELECT
         0)
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
         osm_border_polygon_linestring_gen_z13
     WHERE
@@ -468,7 +523,8 @@ FROM (
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -481,24 +537,31 @@ CREATE MATERIALIZED VIEW osm_border_polygon_gen_z14 AS
 SELECT
     relation_id,
     ST_Subdivide(
-        ST_MakePolygon(geometry)
+        ST_Buffer(
+            ST_MakePolygon(geometry),
+            0
+        )
     ) AS geometry,
     name,
-    admin_level
+    admin_level,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    tags
 FROM (
     SELECT
         relation_id,
         (ST_Dump(ST_LineMerge(ST_Collect(geometry)))).geom AS geometry,
         name,
-        admin_level
+        admin_level,
+        tags
     FROM
-        osm_border_polygon_linestring_gen_z13
+        osm_border_polygon_linestring
     WHERE
         ST_GeometryType(geometry) = 'ST_LineString'
     GROUP BY
         relation_id,
         name,
-        admin_level
+        admin_level,
+        tags
     ) AS t
 WHERE
     ST_IsClosed(geometry) AND
@@ -511,104 +574,104 @@ WHERE
 CREATE OR REPLACE FUNCTION layer_boundary_polygon(bbox geometry, zoom_level int)
     RETURNS TABLE
             (
+                relation_id bigint,
                 geometry geometry,
                 name text,
-                admin_level int
+                admin_level int,
+                ref varchar,
+                tags hstore
             )
 AS
 $$
-SELECT geometry, name, admin_level
-FROM (
-         -- etldoc: osm_border_polygon_gen_z0 ->  layer_boundary_polygon:z0
-         SELECT *
-         FROM osm_border_polygon_gen_z0
-         WHERE geometry && bbox
-           AND zoom_level = 0
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z1 ->  layer_boundary_polygon:z1
-         SELECT *
-         FROM osm_border_polygon_gen_z1
-         WHERE geometry && bbox
-           AND zoom_level = 1
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z2 ->  layer_boundary_polygon:z2
-         SELECT *
-         FROM osm_border_polygon_gen_z2
-         WHERE geometry && bbox
-           AND zoom_level = 2
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z3 ->  layer_boundary_polygon:z3
-         SELECT *
-         FROM osm_border_polygon_gen_z3
-         WHERE geometry && bbox
-           AND zoom_level = 3
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z4 ->  layer_boundary_polygon:z4
-         SELECT *
-         FROM osm_border_polygon_gen_z4
-         WHERE geometry && bbox
-           AND zoom_level = 4
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z5 ->  layer_boundary_polygon:z5
-         SELECT *
-         FROM osm_border_polygon_gen_z5
-         WHERE geometry && bbox
-           AND zoom_level = 5
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z6 ->  layer_boundary_polygon:z6
-         SELECT *
-         FROM osm_border_polygon_gen_z6
-         WHERE geometry && bbox
-           AND zoom_level = 6
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z7 ->  layer_boundary_polygon:z7
-         SELECT *
-         FROM osm_border_polygon_gen_z7
-         WHERE geometry && bbox
-           AND zoom_level = 7
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z8 ->  layer_boundary_polygon:z8
-         SELECT *
-         FROM osm_border_polygon_gen_z8
-         WHERE geometry && bbox
-           AND zoom_level = 8
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z9 ->  layer_boundary_polygon:z9
-         SELECT *
-         FROM osm_border_polygon_gen_z9
-         WHERE geometry && bbox
-           AND zoom_level = 9
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z10 ->  layer_boundary_polygon:z10
-         SELECT *
-         FROM osm_border_polygon_gen_z10
-         WHERE geometry && bbox
-           AND zoom_level = 10
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z11 ->  layer_boundary_polygon:z11
-         SELECT *
-         FROM osm_border_polygon_gen_z11
-         WHERE geometry && bbox
-           AND zoom_level = 11
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z12 ->  layer_boundary_polygon:z12
-         SELECT *
-         FROM osm_border_polygon_gen_z12
-         WHERE geometry && bbox
-           AND zoom_level = 12
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z13 -> layer_boundary_polygon:z13
-         SELECT *
-         FROM osm_border_polygon_gen_z13
-         WHERE geometry && bbox
-           AND zoom_level = 13
-         UNION ALL
-         -- etldoc: osm_border_polygon_gen_z14 -> layer_boundary_polygon:z14
-         SELECT *
-         FROM osm_border_polygon_gen_z14
-         WHERE geometry && bbox
-           AND zoom_level >= 14
-     ) AS zoom_levels;
+    -- etldoc: osm_border_polygon_gen_z0 ->  layer_boundary_polygon:z0
+    SELECT *
+    FROM osm_border_polygon_gen_z0
+    WHERE geometry && bbox
+    AND zoom_level = 0
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z1 ->  layer_boundary_polygon:z1
+    SELECT *
+    FROM osm_border_polygon_gen_z1
+    WHERE geometry && bbox
+    AND zoom_level = 1
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z2 ->  layer_boundary_polygon:z2
+    SELECT *
+    FROM osm_border_polygon_gen_z2
+    WHERE geometry && bbox
+    AND zoom_level = 2
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z3 ->  layer_boundary_polygon:z3
+    SELECT *
+    FROM osm_border_polygon_gen_z3
+    WHERE geometry && bbox
+    AND zoom_level = 3
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z4 ->  layer_boundary_polygon:z4
+    SELECT *
+    FROM osm_border_polygon_gen_z4
+    WHERE geometry && bbox
+    AND zoom_level = 4
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z5 ->  layer_boundary_polygon:z5
+    SELECT *
+    FROM osm_border_polygon_gen_z5
+    WHERE geometry && bbox
+    AND zoom_level = 5
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z6 ->  layer_boundary_polygon:z6
+    SELECT *
+    FROM osm_border_polygon_gen_z6
+    WHERE geometry && bbox
+    AND zoom_level = 6
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z7 ->  layer_boundary_polygon:z7
+    SELECT *
+    FROM osm_border_polygon_gen_z7
+    WHERE geometry && bbox
+    AND zoom_level = 7
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z8 ->  layer_boundary_polygon:z8
+    SELECT *
+    FROM osm_border_polygon_gen_z8
+    WHERE geometry && bbox
+    AND zoom_level = 8
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z9 ->  layer_boundary_polygon:z9
+    SELECT *
+    FROM osm_border_polygon_gen_z9
+    WHERE geometry && bbox
+    AND zoom_level = 9
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z10 ->  layer_boundary_polygon:z10
+    SELECT *
+    FROM osm_border_polygon_gen_z10
+    WHERE geometry && bbox
+    AND zoom_level = 10
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z11 ->  layer_boundary_polygon:z11
+    SELECT *
+    FROM osm_border_polygon_gen_z11
+    WHERE geometry && bbox
+    AND zoom_level = 11
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z12 ->  layer_boundary_polygon:z12
+    SELECT *
+    FROM osm_border_polygon_gen_z12
+    WHERE geometry && bbox
+    AND zoom_level = 12
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z13 -> layer_boundary_polygon:z13
+    SELECT *
+    FROM osm_border_polygon_gen_z13
+    WHERE geometry && bbox
+    AND zoom_level = 13
+    UNION ALL
+    -- etldoc: osm_border_polygon_gen_z14 -> layer_boundary_polygon:z14
+    SELECT *
+    FROM osm_border_polygon_gen_z14
+    WHERE geometry && bbox
+    AND zoom_level >= 14;
 $$ LANGUAGE SQL STABLE
                 -- STRICT
                 PARALLEL SAFE;

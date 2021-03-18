@@ -5,14 +5,23 @@ layer:
       OSM boundaries ([`boundary=administrative`](http://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative))
       are present from z0 to z14.
   fields:
-    name: Local default name.
+    name: The OSM [`name`](http://wiki.openstreetmap.org/wiki/Key:name) value of the adminstrative area.
     admin_level: |
         OSM [admin_level](http://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative#admin_level)
         indicating the level of importance of this boundary.
+    ref: |
+        Reference of the enity, first available value of:
+        * ISO3166-1
+        * ISO3166-2
+        * ref:NUTS
+        * ref:INSEE
+        * nat_ref
+        * ref
   buffer_size: 4
   datasource:
     geometry_field: geometry
-    query: (SELECT geometry, name, admin_level FROM layer_boundary_polygon(!bbox!, z(!scale_denominator!))) AS t
+    key_field: relation_id
+    query: (SELECT relation_id, geometry, name, {name_languages}, admin_level, ref FROM layer_boundary_polygon(!bbox!, z(!scale_denominator!))) AS t
 schema:
   - ./boundary_polygon.sql
 datasources:

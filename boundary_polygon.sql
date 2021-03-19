@@ -35,6 +35,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(0) * ZRes(0)
 ;
+CREATE INDEX osm_border_polygon_gen_z0_idx_geometry ON osm_border_polygon_gen_z0 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z1 ->  osm_border_polygon_gen_z1
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z1;
@@ -73,6 +74,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(1) * ZRes(1)
 ;
+CREATE INDEX osm_border_polygon_gen_z1_idx_geometry ON osm_border_polygon_gen_z1 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z2 ->  osm_border_polygon_gen_z2
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z2;
@@ -111,6 +113,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(2) * ZRes(2)
 ;
+CREATE INDEX osm_border_polygon_gen_z2_idx_geometry ON osm_border_polygon_gen_z2 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z3 ->  osm_border_polygon_gen_z3
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z3;
@@ -149,6 +152,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(3) * ZRes(3)
 ;
+CREATE INDEX osm_border_polygon_gen_z3_idx_geometry ON osm_border_polygon_gen_z3 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z4 ->  osm_border_polygon_gen_z4
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z4;
@@ -187,6 +191,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(4) * ZRes(4)
 ;
+CREATE INDEX osm_border_polygon_gen_z4_idx_geometry ON osm_border_polygon_gen_z4 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z5 ->  osm_border_polygon_gen_z5
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z5;
@@ -225,6 +230,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(5) * ZRes(5)
 ;
+CREATE INDEX osm_border_polygon_gen_z5_idx_geometry ON osm_border_polygon_gen_z5 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z6 ->  osm_border_polygon_gen_z6
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z6;
@@ -263,6 +269,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(6) * ZRes(6)
 ;
+CREATE INDEX osm_border_polygon_gen_z6_idx_geometry ON osm_border_polygon_gen_z6 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z7 ->  osm_border_polygon_gen_z7
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z7;
@@ -301,6 +308,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(7) * ZRes(7)
 ;
+CREATE INDEX osm_border_polygon_gen_z7_idx_geometry ON osm_border_polygon_gen_z7 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z8 ->  osm_border_polygon_gen_z8
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z8;
@@ -339,6 +347,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(8) * ZRes(8)
 ;
+CREATE INDEX osm_border_polygon_gen_z8_idx_geometry ON osm_border_polygon_gen_z8 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z9 ->  osm_border_polygon_gen_z9
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z9;
@@ -377,6 +386,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(9) * ZRes(9)
 ;
+CREATE INDEX osm_border_polygon_gen_z9_idx_geometry ON osm_border_polygon_gen_z9 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z10 ->  osm_border_polygon_gen_z10
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z10;
@@ -415,6 +425,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(10) * ZRes(10)
 ;
+CREATE INDEX osm_border_polygon_gen_z10_idx_geometry ON osm_border_polygon_gen_z10 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z11 ->  osm_border_polygon_gen_z11
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z11;
@@ -453,6 +464,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(11) * ZRes(11)
 ;
+CREATE INDEX osm_border_polygon_gen_z11_idx_geometry ON osm_border_polygon_gen_z11 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z12 ->  osm_border_polygon_gen_z12
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z12;
@@ -491,6 +503,7 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(12) * ZRes(12)
 ;
+CREATE INDEX osm_border_polygon_gen_z12_idx_geometry ON osm_border_polygon_gen_z12 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring_gen_z13 ->  osm_border_polygon_gen_z13
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z13;
@@ -531,7 +544,9 @@ WHERE
     ST_NPoints(geometry) >= 4 AND
     ST_Area(ST_MakePolygon(geometry)) > ZRes(13) * ZRes(13)
 ;
+CREATE INDEX osm_border_polygon_gen_z13_idx_geometry ON osm_border_polygon_gen_z13 USING gist(geometry);
 
+-- etldoc: osm_border_polygon_linestring ->  osm_border_polygon_gen_z14
 DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z14;
 CREATE MATERIALIZED VIEW osm_border_polygon_gen_z14 AS
 SELECT
@@ -567,6 +582,7 @@ WHERE
     ST_IsClosed(geometry) AND
     ST_NPoints(geometry) >= 4
 ;
+CREATE INDEX osm_border_polygon_gen_z14_idx_geometry ON osm_border_polygon_gen_z14 USING gist(geometry);
 
 
 -- etldoc: layer_boundary_polygon[shape=record fillcolor=lightpink, style="rounded,filled",

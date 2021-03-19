@@ -547,7 +547,7 @@ WHERE
 CREATE INDEX osm_border_polygon_gen_z13_idx_geometry ON osm_border_polygon_gen_z13 USING gist(geometry);
 
 -- etldoc: osm_border_polygon_linestring ->  osm_border_polygon_gen_z14
-DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z14;
+DROP MATERIALIZED VIEW IF EXISTS osm_border_polygon_gen_z14 CASCADE;
 CREATE MATERIALIZED VIEW osm_border_polygon_gen_z14 AS
 SELECT
     relation_id,

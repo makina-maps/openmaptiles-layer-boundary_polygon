@@ -5,13 +5,18 @@ This project is an [OpenMapTiles](https://github.com/openmaptiles/openmaptiles) 
 It adds the data layer:
 
 * `boundary_polygon`: containing polygon for adminstrative area from OSM relation `type=boundary` + `boundary=adminstrative` + `admin_level=1-9`
+* `boundary_label`: containing, OSM `label` position, `admin_centre` position or a point in the largest polygon of the adminstrative area.
 
 Git-clone this project on the root the the OpenMapTiles project:
 ```
 git clone https://github.com/makina-maps/openmaptiles-layer-boundary_polygon.git layers_extra/boundary_polygon
 ```
 
-Add the layer definition from `layers_extra/boundary_polygon/boundary_polygon/boundary_polygon.yaml` on your own `openmaptiles.yaml` tileset definition. Change `TILESET_FILE` from the OpenMapTiles `.env` to point on it.
+Add the layer definition to your own `openmaptiles.yaml` tileset definition:
+* `layers_extra/boundary_polygon/boundary_polygon/boundary_polygon.yaml`
+* `layers_extra/boundary_polygon/boundary_label/boundary_label.yaml`
+Change `TILESET_FILE` from the OpenMapTiles `.env` to point on it.
+
 
 # License
 

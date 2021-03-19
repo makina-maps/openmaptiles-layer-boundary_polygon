@@ -11,7 +11,7 @@ Git-clone this project on the root the the OpenMapTiles project:
 git clone https://github.com/makina-maps/openmaptiles-layer-boundary_polygon.git layers_extra/boundary_polygon
 ```
 
-Add the layer definition from `layers_extra/boundary_polygon/boundary_polygon.yaml` on your own `openmaptiles.yaml` tileset definition. Change `TILESET_FILE` from the OpenMapTiles `.env` to point on it.
+Add the layer definition from `layers_extra/boundary_polygon/boundary_polygon/boundary_polygon.yaml` on your own `openmaptiles.yaml` tileset definition. Change `TILESET_FILE` from the OpenMapTiles `.env` to point on it.
 
 # License
 

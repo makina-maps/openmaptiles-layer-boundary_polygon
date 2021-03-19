@@ -17,7 +17,7 @@ layer:
         * ref:INSEE
         * nat_ref
         * ref
-  buffer_size: 4
+  buffer_size: 16
   datasource:
     geometry_field: geometry
     key_field: relation_id

@@ -583,95 +583,110 @@ CREATE OR REPLACE FUNCTION layer_boundary_polygon(bbox geometry, zoom_level int)
             )
 AS
 $$
-    -- etldoc: osm_border_polygon_gen_z0 ->  layer_boundary_polygon:z0
-    SELECT *
-    FROM osm_border_polygon_gen_z0
-    WHERE geometry && bbox
-    AND zoom_level = 0
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z1 ->  layer_boundary_polygon:z1
-    SELECT *
-    FROM osm_border_polygon_gen_z1
-    WHERE geometry && bbox
-    AND zoom_level = 1
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z2 ->  layer_boundary_polygon:z2
-    SELECT *
-    FROM osm_border_polygon_gen_z2
-    WHERE geometry && bbox
-    AND zoom_level = 2
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z3 ->  layer_boundary_polygon:z3
-    SELECT *
-    FROM osm_border_polygon_gen_z3
-    WHERE geometry && bbox
-    AND zoom_level = 3
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z4 ->  layer_boundary_polygon:z4
-    SELECT *
-    FROM osm_border_polygon_gen_z4
-    WHERE geometry && bbox
-    AND zoom_level = 4
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z5 ->  layer_boundary_polygon:z5
-    SELECT *
-    FROM osm_border_polygon_gen_z5
-    WHERE geometry && bbox
-    AND zoom_level = 5
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z6 ->  layer_boundary_polygon:z6
-    SELECT *
-    FROM osm_border_polygon_gen_z6
-    WHERE geometry && bbox
-    AND zoom_level = 6
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z7 ->  layer_boundary_polygon:z7
-    SELECT *
-    FROM osm_border_polygon_gen_z7
-    WHERE geometry && bbox
-    AND zoom_level = 7
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z8 ->  layer_boundary_polygon:z8
-    SELECT *
-    FROM osm_border_polygon_gen_z8
-    WHERE geometry && bbox
-    AND zoom_level = 8
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z9 ->  layer_boundary_polygon:z9
-    SELECT *
-    FROM osm_border_polygon_gen_z9
-    WHERE geometry && bbox
-    AND zoom_level = 9
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z10 ->  layer_boundary_polygon:z10
-    SELECT *
-    FROM osm_border_polygon_gen_z10
-    WHERE geometry && bbox
-    AND zoom_level = 10
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z11 ->  layer_boundary_polygon:z11
-    SELECT *
-    FROM osm_border_polygon_gen_z11
-    WHERE geometry && bbox
-    AND zoom_level = 11
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z12 ->  layer_boundary_polygon:z12
-    SELECT *
-    FROM osm_border_polygon_gen_z12
-    WHERE geometry && bbox
-    AND zoom_level = 12
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z13 -> layer_boundary_polygon:z13
-    SELECT *
-    FROM osm_border_polygon_gen_z13
-    WHERE geometry && bbox
-    AND zoom_level = 13
-    UNION ALL
-    -- etldoc: osm_border_polygon_gen_z14 -> layer_boundary_polygon:z14
-    SELECT *
-    FROM osm_border_polygon_gen_z14
-    WHERE geometry && bbox
-    AND zoom_level >= 14;
+    SELECT
+        relation_id,
+        ST_Union(geometry) AS geometry,
+        name,
+        admin_level,
+        ref,
+        tags
+    FROM (
+        -- etldoc: osm_border_polygon_gen_z0 ->  layer_boundary_polygon:z0
+        SELECT *
+        FROM osm_border_polygon_gen_z0
+        WHERE geometry && bbox
+        AND zoom_level = 0
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z1 ->  layer_boundary_polygon:z1
+        SELECT *
+        FROM osm_border_polygon_gen_z1
+        WHERE geometry && bbox
+        AND zoom_level = 1
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z2 ->  layer_boundary_polygon:z2
+        SELECT *
+        FROM osm_border_polygon_gen_z2
+        WHERE geometry && bbox
+        AND zoom_level = 2
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z3 ->  layer_boundary_polygon:z3
+        SELECT *
+        FROM osm_border_polygon_gen_z3
+        WHERE geometry && bbox
+        AND zoom_level = 3
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z4 ->  layer_boundary_polygon:z4
+        SELECT *
+        FROM osm_border_polygon_gen_z4
+        WHERE geometry && bbox
+        AND zoom_level = 4
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z5 ->  layer_boundary_polygon:z5
+        SELECT *
+        FROM osm_border_polygon_gen_z5
+        WHERE geometry && bbox
+        AND zoom_level = 5
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z6 ->  layer_boundary_polygon:z6
+        SELECT *
+        FROM osm_border_polygon_gen_z6
+        WHERE geometry && bbox
+        AND zoom_level = 6
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z7 ->  layer_boundary_polygon:z7
+        SELECT *
+        FROM osm_border_polygon_gen_z7
+        WHERE geometry && bbox
+        AND zoom_level = 7
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z8 ->  layer_boundary_polygon:z8
+        SELECT *
+        FROM osm_border_polygon_gen_z8
+        WHERE geometry && bbox
+        AND zoom_level = 8
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z9 ->  layer_boundary_polygon:z9
+        SELECT *
+        FROM osm_border_polygon_gen_z9
+        WHERE geometry && bbox
+        AND zoom_level = 9
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z10 ->  layer_boundary_polygon:z10
+        SELECT *
+        FROM osm_border_polygon_gen_z10
+        WHERE geometry && bbox
+        AND zoom_level = 10
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z11 ->  layer_boundary_polygon:z11
+        SELECT *
+        FROM osm_border_polygon_gen_z11
+        WHERE geometry && bbox
+        AND zoom_level = 11
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z12 ->  layer_boundary_polygon:z12
+        SELECT *
+        FROM osm_border_polygon_gen_z12
+        WHERE geometry && bbox
+        AND zoom_level = 12
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z13 -> layer_boundary_polygon:z13
+        SELECT *
+        FROM osm_border_polygon_gen_z13
+        WHERE geometry && bbox
+        AND zoom_level = 13
+        UNION ALL
+        -- etldoc: osm_border_polygon_gen_z14 -> layer_boundary_polygon:z14
+        SELECT *
+        FROM osm_border_polygon_gen_z14
+        WHERE geometry && bbox
+        AND zoom_level >= 14
+    ) AS t
+    GROUP BY
+        relation_id,
+        name,
+        admin_level,
+        ref,
+        tags;
 $$ LANGUAGE SQL STABLE
                 -- STRICT
                 PARALLEL SAFE;

@@ -10,10 +10,9 @@ label AS (
     FROM
         osm_border_polygon_relation
     WHERE
-        role IN ('label', 'admin_centre')
+        role = 'label'
     ORDER BY
-        relation_id,
-        role DESC
+        relation_id
 ),
 poly AS (
     SELECT DISTINCT ON (relation_id)

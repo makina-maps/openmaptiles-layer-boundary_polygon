@@ -15,20 +15,31 @@ label AS (
         relation_id
 ),
 poly AS (
-    SELECT DISTINCT ON (relation_id)
-        *
+    SELECT
+        relation_id,
+        ST_Collect(geometry) AS geometry,
+        name,
+        admin_level,
+        ref,
+        tags
     FROM
         osm_border_polygon_gen_z14
-    ORDER BY
+    GROUP BY
         relation_id,
-        ST_Area(geometry) DESC
+        name,
+        admin_level,
+        ref,
+        tags
 )
 SELECT
     relation_id,
-    ST_PointOnSurface(COALESCE(
-        label.geometry,
-        poly.geometry
-    )) AS geometry,
+    CASE
+        WHEN label.geometry IS NOT NULL
+            THEN ST_Centroid(label.geometry)
+        WHEN ST_Intersects(ST_Centroid(poly.geometry), poly.geometry)
+            THEN ST_Centroid(poly.geometry)
+        ELSE ST_PointOnSurface(poly.geometry)
+    END AS geometry,
     COALESCE(label.name, poly.name) AS name,
     COALESCE(label.admin_level, poly.admin_level) AS admin_level,
     COALESCE(label.ref, poly.ref) AS ref,

@@ -13,8 +13,13 @@ layer:
         Reference of the enity, first available value of:
         * ISO3166-1
         * ISO3166-2
-        * ref:NUTS
-        * ref:INSEE
+        * ref:NUTS (Europe)
+        * Municipality
+          * ref:INS (Belgium)
+          * ref:INSEE (France)
+          * de:regionalschluessel (Germany)
+          * ref:ISTAT (Italy)
+          * ine:municipio (Spain)
         * nat_ref
         * ref
   buffer_size: 16

@@ -5,6 +5,13 @@ tags:
     - ref:*
     - nat_ref
     - ref
+    - ref:NUTS # Europe
+    # Municipality
+    - ref:INS # Belgium
+    - ref:INSEE # France
+    - de:regionalschluessel # Germany
+    - ref:ISTAT # Italy
+    - ine:municipio # Spain
 
 
 generalized_tables:

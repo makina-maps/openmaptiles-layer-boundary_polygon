@@ -13,7 +13,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -52,7 +52,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -91,7 +91,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -130,7 +130,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -169,7 +169,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -208,7 +208,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -247,7 +247,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -286,7 +286,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -325,7 +325,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -364,7 +364,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -403,7 +403,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -442,7 +442,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -481,7 +481,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -520,7 +520,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
@@ -559,7 +559,7 @@ SELECT
     ) AS geometry,
     name,
     admin_level,
-    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INSEE', tags->'nat_ref', tags->'ref') AS ref,
+    COALESCE(tags->'ISO3166-1', tags->'ISO3166-2', tags->'ref:NUTS', tags->'ref:INS', tags->'ref:INSEE', tags->'de:regionalschluessel', tags->'ref:ISTAT', tags->'ine:municipio', tags->'nat_ref', tags->'ref') AS ref,
     tags
 FROM (
     SELECT
